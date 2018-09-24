@@ -78,5 +78,20 @@ namespace CRUD_SQL_Excersise
                 cmd.ExecuteNonQuery();
             }
         }
+
+        // DeleteDepartment method that deletes a record in dapartment table
+        public void DeleteDepartment(int id)
+        {
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                var cmd = conn.CreateCommand();
+                cmd.CommandText = "DELETE FROM department WHERE DepartmentID = @id;";
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.ExecuteNonQuery();
+            }
+
+        }
     }
 }
