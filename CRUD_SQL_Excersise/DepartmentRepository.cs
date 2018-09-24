@@ -73,7 +73,7 @@ namespace CRUD_SQL_Excersise
                 var cmd = conn.CreateCommand();
                 cmd.CommandText = "UPDATE department SET Name = @newName, ModifiedDate = @date  WHERE Name = @name;";
                 cmd.Parameters.AddWithValue("name", Name);
-                cmd.Parameters.AddWithValue("newName", Name);
+                cmd.Parameters.AddWithValue("newName", newName);
                 cmd.Parameters.AddWithValue("date", DateTime.Now);
                 cmd.ExecuteNonQuery();
             }

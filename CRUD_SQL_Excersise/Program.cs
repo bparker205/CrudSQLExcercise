@@ -39,16 +39,16 @@ namespace CRUD_SQL_Excersise
             //        $"{department.ModifiedDate}\n");
             //}
 
-
+            //Console.ReadLine();
             //Updates department name to a new name
             //Console.WriteLine("Updating department name.....");
             //departmentRepo.UpdateDepartment("New Department", "New Updated Department");
             //Console.WriteLine("Department Updated......");
 
 
-            // Deletes row from department table based on DepartmentID
+            //Deletes row from department table based on DepartmentID
             Console.WriteLine("Deleting department ID.......");
-            departmentRepo.DeleteDepartment(19);
+            departmentRepo.DeleteDepartment(20);
             Console.WriteLine("Department ID deleted.....");
 
 
