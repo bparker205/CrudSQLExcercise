@@ -1,5 +1,4 @@
-﻿
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 
@@ -44,6 +43,7 @@ namespace CRUD_SQL_Excersise
             }
         }
 
+
         // AddDepartment method that creates a new department to table
         public void AddDepartment(string name, string gname, DateTime date)
         {
@@ -60,6 +60,23 @@ namespace CRUD_SQL_Excersise
             }
 
 
+        }
+
+
+        // UpdateDepartment method that updates a record in department table
+        public void UpdateDepartment(string Name, string newName)
+        {
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                var cmd = conn.CreateCommand();
+                cmd.CommandText = "UPDATE department SET Name = @newName, ModifiedDate = @date  WHERE Name = @name;";
+                cmd.Parameters.AddWithValue("name", Name);
+                cmd.Parameters.AddWithValue("newName", Name);
+                cmd.Parameters.AddWithValue("date", DateTime.Now);
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

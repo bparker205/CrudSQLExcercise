@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace CRUD_SQL_Excersise
@@ -23,24 +22,28 @@ namespace CRUD_SQL_Excersise
 
             var departmentRepo = new DepartmentRepository(connString);
 
-            // Create Department row in department table
-            Console.WriteLine("Creating new department....");
-            departmentRepo.AddDepartment("New Department", "New Group Name", DateTime.Now);
-            Console.WriteLine("Department Created.....");
+            //// Create Department row in department table
+            //Console.WriteLine("Creating new department....");
+            //departmentRepo.AddDepartment("New Department", "New Group Name", DateTime.Now);
+            //Console.WriteLine("Department Created.....");
 
 
-            // Converts table to a List then prints table rows to console
-            List<Department> departments = departmentRepo.GetDepartments();
+            //// Converts table to a List then prints table rows to console
+            //List<Department> departments = departmentRepo.GetDepartments();
 
-            foreach (Department department in departments)
-            {
-                Console.WriteLine($"{department.DepartmentID} | " +
-                    $"{ department.Name} | " +
-                    $"{department.GroupName} | " +
-                    $"{department.ModifiedDate}\n");
-            }
+            //foreach (Department department in departments)
+            //{
+            //    Console.WriteLine($"{department.DepartmentID} | " +
+            //        $"{ department.Name} | " +
+            //        $"{department.GroupName} | " +
+            //        $"{department.ModifiedDate}\n");
+            //}
 
 
+            // Updates department name to a new name
+            Console.WriteLine("Updating department name.....");
+            departmentRepo.UpdateDepartment("New Department", "New Updated Department");
+            Console.WriteLine("Department Updated......");
 
 
         }
