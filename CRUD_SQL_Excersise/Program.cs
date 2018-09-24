@@ -23,6 +23,11 @@ namespace CRUD_SQL_Excersise
 
             var departmentRepo = new DepartmentRepository(connString);
 
+            // Create Department row in department table
+            Console.WriteLine("Creating new department....");
+            departmentRepo.AddDepartment("New Department", "New Group Name", DateTime.Now);
+            Console.WriteLine("Department Created.....");
+
 
             // Converts table to a List then prints table rows to console
             List<Department> departments = departmentRepo.GetDepartments();
@@ -34,6 +39,9 @@ namespace CRUD_SQL_Excersise
                     $"{department.GroupName} | " +
                     $"{department.ModifiedDate}\n");
             }
+
+
+
 
         }
     }

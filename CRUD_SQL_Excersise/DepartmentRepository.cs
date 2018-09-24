@@ -43,5 +43,23 @@ namespace CRUD_SQL_Excersise
                 return departments;
             }
         }
+
+        // AddDepartment method that creates a new department to table
+        public void AddDepartment(string name, string gname, DateTime date)
+        {
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                var cmd = conn.CreateCommand();
+                cmd.CommandText = "INSERT INTO department (Name, GroupName, ModifiedDate) VALUES (@name, @gName, @date)";
+                cmd.Parameters.AddWithValue("name", name);
+                cmd.Parameters.AddWithValue("gname", gname);
+                cmd.Parameters.AddWithValue("date", date);
+                cmd.ExecuteNonQuery();
+            }
+
+
+        }
     }
 }
