@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CRUD_SQL_Excersise
+namespace CRUD_SQL_Excercise
 {
     interface IRepository
     {

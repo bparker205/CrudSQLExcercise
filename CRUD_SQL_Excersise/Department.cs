@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CRUD_SQL_Excersise
+namespace CRUD_SQL_Excercise
 {
     public class Department
     {

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace CRUD_SQL_Excersise
+namespace CRUD_SQL_Excercise
 {
     class Program
     {
@@ -60,6 +60,7 @@ namespace CRUD_SQL_Excersise
 
             var dept = new Department
             {
+                DepartmentID = 999,
                 Name = "New Dapper Department",
                 GroupName = "Dapper Group",
                 ModifiedDate = DateTime.Now,
@@ -86,9 +87,26 @@ namespace CRUD_SQL_Excersise
             dapperdepartmentRepo.UpdateDepartment(dept);
             Console.WriteLine("Department updated:.......");
 
+            int id;
+
+            while (true)
+            {
+                Console.WriteLine("What department would you like to delete:");
+                bool pass = int.TryParse(Console.ReadLine(), out id);
+                if (!pass)
+                {
+                    Console.WriteLine("Please enter a number!");
+                    continue;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
             // Deletes table row based on DepartmentID
             Console.WriteLine("Deleting department:......");
-            dapperdepartmentRepo.DeleteDepartment(22);
+            dapperdepartmentRepo.DeleteDepartment(id);
             Console.WriteLine("Department deleted:.......");
 
             //Console.ReadLine();

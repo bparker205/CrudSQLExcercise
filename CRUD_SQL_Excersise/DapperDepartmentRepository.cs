@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 using Dapper;
 using System.Linq;
 
-namespace CRUD_SQL_Excersise
+namespace CRUD_SQL_Excercise
 {
     public class DapperDepartmentRepository : IRepository
     {
@@ -40,7 +40,7 @@ namespace CRUD_SQL_Excersise
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                conn.Execute("UPDATE department SET @newName, ModifiedDate = @date WHERE Name = @name;", new { newName = newdept.Name, date = newdept.ModifiedDate });
+                conn.Execute("UPDATE department SET Name = @newName, ModifiedDate = @date WHERE DepartmentId = @id;", new { newName = newdept.Name, date = newdept.ModifiedDate, id = newdept.DepartmentID });
             }
         }
 

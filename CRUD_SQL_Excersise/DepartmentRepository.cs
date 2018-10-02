@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CRUD_SQL_Excersise
+namespace CRUD_SQL_Excercise
 {
     public class DepartmentRepository
     {
