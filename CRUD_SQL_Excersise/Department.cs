@@ -8,5 +8,6 @@ namespace CRUD_SQL_Excersise
         public string Name { get; set; }
         public string GroupName { get; set; }
         public DateTime ModifiedDate { get; set; }
+
     }
 }

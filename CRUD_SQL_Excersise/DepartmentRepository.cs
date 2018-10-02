@@ -16,7 +16,7 @@ namespace CRUD_SQL_Excersise
 
 
 
-        // GetDepartments method that returns a list of departments Department table 
+        // GetDepartments method returns a list of departments Department table 
         public List<Department> GetDepartments()
         {
             using (var conn = new MySqlConnection(connectionString))
